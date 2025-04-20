@@ -35,10 +35,14 @@ pip3 install -i http://yum.tbsite.net/aliyun-pypi/simple/ --extra-index-url http
 ```
 云上环境
 ```shell
-pip install https://docmind-api-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sdk/doc_json_sdk-1.0.0-py3-none-any.whl
+pip install https://docmind-api-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sdk/doc_json_sdk-1.0.9-py3-none-any.whl
 ```
 
 > release:
+> - 1.0.9 : 当前版本，修复llm_enhancement参数支持，优化代码结构，兼容Python 3.12和macOS环境，修复字体文件包含问题，增强文档解析兼容性
+> - 1.0.8 : 已废除，存在文档解析兼容性问题
+> - 1.0.4 : 已废除，不兼容Python 3.12
+> - 1.0.3 : 已废除，请勿使用
 > - 1.0.0 : 正式版本
 > - 0.1.9.0: 新调用和接口方式
 > - 0.1.8.0：修复
@@ -72,7 +76,8 @@ def test_local_json_document():
 - 公有云环境调用（配置ALIBABA_CLOUD_ACCESS_KEY_ID，ALIBABA_CLOUD_ACCESS_KEY_SECRET）
 ```python
 from doc_json_sdk.loader.document_model_loader import DocumentModelLoader
-from doc_json_sdk.handler.document_handler import DocumentExtractHandler,DocumentDigitalExtractHandler
+from doc_json_sdk.handler.document_handler import DocumentExtractHandler, DocumentDigitalExtractHandler
+from doc_json_sdk.handler.document_parser_handler import DocumentParserHandler, DocumentParserWithCallbackHandler
 def test_document_hander():
     file_path = "gongshi.png"
     file_url = None
@@ -116,7 +121,8 @@ def test_private_document_hander():
 使用内置函数处理为markdown
 ```python
 from doc_json_sdk.loader.document_model_loader import DocumentModelLoader
-from doc_json_sdk.handler.document_handler import DocumentExtractHandler,DocumentDigitalExtractHandler
+from doc_json_sdk.handler.document_handler import DocumentExtractHandler, DocumentDigitalExtractHandler
+from doc_json_sdk.handler.document_parser_handler import DocumentParserHandler, DocumentParserWithCallbackHandler
 from doc_json_sdk.render.document_model_render import DocumentModelRender
 def test_render_markdown():
     file_path = "gongshi.png"
@@ -131,7 +137,8 @@ def test_render_markdown():
 可视化查看处理效果
 ```python
 from doc_json_sdk.loader.document_model_loader import DocumentModelLoader
-from doc_json_sdk.handler.document_handler import DocumentExtractHandler,DocumentDigitalExtractHandler
+from doc_json_sdk.handler.document_handler import DocumentExtractHandler, DocumentDigitalExtractHandler
+from doc_json_sdk.handler.document_parser_handler import DocumentParserHandler, DocumentParserWithCallbackHandler
 from doc_json_sdk.render.document_model_render import DocumentModelRender
 def test_document_hander():
     file_path = "gongshi.png"

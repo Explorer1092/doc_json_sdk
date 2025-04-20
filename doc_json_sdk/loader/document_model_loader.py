@@ -79,7 +79,7 @@ class DocumentModelLoader:
                                  logics=LogicModel(
                                      None if 'logics' not in doc_json_dict else doc_json_dict['logics']),
                                  doc_info=None if 'docInfo' not in doc_json_dict else DocInfoModel(doc_json_dict['docInfo']),
-                                 version=doc_json_dict['version'])
+                                 version=doc_json_dict.get('version', '1.0'))
         if build_layout_image:
             self.__rebuild_layout_model(document)
         if build_doc_tree:
