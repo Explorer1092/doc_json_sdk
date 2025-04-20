@@ -67,17 +67,16 @@ class LayoutModel(object):
     """父版面：如标题为当前段落的父版面"""
 
     def __init__(self, layout_model: {}):
-        self.text = layout_model['text']
-        self.index = layout_model['index']
-        self.unique_id = layout_model['uniqueId']
-        self.alignment = layout_model['alignment'] if 'alignment' in layout_model else 'left'
-        self.page_num = layout_model['pageNum']
-        self.pos = [PosModel(i) for i in layout_model['pos']] if 'pos' in layout_model and layout_model['pos'] else []
+        self.text = layout_model.get('text', '')
+        self.index = layout_model.get('index', 0)
+        self.unique_id = layout_model.get('uniqueId', '')
+        self.alignment = layout_model.get('alignment', 'left')
+        self.page_num = layout_model.get('pageNum', [])
+        self.pos = [PosModel(i) for i in layout_model.get('pos', [])] if layout_model.get('pos') else []
         self.child_layout = []
-        self.type = layout_model['type']
-        self.sub_type = "" if 'subType' not in layout_model else layout_model['subType']
-        self.markdownContent = layout_model['markdownContent'] if 'markdownContent' in layout_model and layout_model[
-            'markdownContent'] is not None else None
+        self.type = layout_model.get('type', '')
+        self.sub_type = layout_model.get('subType', '')
+        self.markdownContent = layout_model.get('markdownContent') if layout_model.get('markdownContent') is not None else None
 
     def set_child_layout(self, child_layout: []):
         self.child_layout = child_layout

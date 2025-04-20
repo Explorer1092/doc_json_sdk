@@ -27,11 +27,11 @@ class ParagraphLayoutModel(LayoutModel):
     def __init__(self, paragraph_layout_model: dict):
         super().__init__(paragraph_layout_model)
         self.blocks = []
-        self.line_height = paragraph_layout_model['lineHeight'] if 'lineHeight' in paragraph_layout_model else 20
-        self.line_height = paragraph_layout_model['firstLinesChars'] if 'firstLinesChars' in paragraph_layout_model else 20
+        self.line_height = paragraph_layout_model.get('lineHeight', 20)
+        self.first_lines_chars = paragraph_layout_model.get('firstLinesChars', 0)  # 修正变量名和赋值
         if 'blocks' not in paragraph_layout_model:
             return
-        for i in paragraph_layout_model['blocks']:
+        for i in paragraph_layout_model.get('blocks', []):
             self.blocks.append(Block(i))
 
     def get_blocks(self) -> []:
@@ -45,5 +45,5 @@ class ParagraphLayoutModel(LayoutModel):
         pass
 
     def get_first_line_chars(self):
-        return self.__first_line_chars
+        return self.first_lines_chars  # 修正变量名
         pass

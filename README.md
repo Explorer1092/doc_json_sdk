@@ -35,11 +35,13 @@ pip3 install -i http://yum.tbsite.net/aliyun-pypi/simple/ --extra-index-url http
 ```
 云上环境
 ```shell
-pip install https://docmind-api-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sdk/doc_json_sdk-1.0.9-py3-none-any.whl
+pip install https://docmind-api-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/sdk/doc_json_sdk-1.0.11-py3-none-any.whl
 ```
 
 > release:
-> - 1.0.9 : 当前版本，修复llm_enhancement参数支持，优化代码结构，兼容Python 3.12和macOS环境，修复字体文件包含问题，增强文档解析兼容性
+> - 1.0.11 : 当前版本，修复llm_enhancement参数支持，优化代码结构，兼容Python 3.12和macOS环境，修复字体文件包含问题，增强文档解析兼容性，全面增强错误处理
+> - 1.0.10 : 已废除，存在其他字段缺失问题
+> - 1.0.9 : 已废除，存在styleId缺失问题
 > - 1.0.8 : 已废除，存在文档解析兼容性问题
 > - 1.0.4 : 已废除，不兼容Python 3.12
 > - 1.0.3 : 已废除，请勿使用

@@ -1,6 +1,6 @@
 [project]
 name = "doc-json-sdk"
-version = "1.0.9"
+version = "1.0.11"
 requires-python = ">=3.8"
 dependencies = [
     "pillow==9.0.0",
@@ -17,8 +17,8 @@ dependencies = [
 
 [tool.poetry]
 name = "doc-json-sdk"
-version = "1.0.9"
-description = "修复llm_enhancement参数支持，优化代码结构，增强文档解析兼容性"
+version = "1.0.11"
+description = "修复llm_enhancement参数支持，优化代码结构，增强文档解析兼容性，全面增强错误处理"
 authors = ["足溪 <sanchuan.ssc@alibaba-inc.com>"]
 readme = "README.md"
 

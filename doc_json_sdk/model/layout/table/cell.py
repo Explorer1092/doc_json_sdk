@@ -31,17 +31,17 @@ class Cell:
 
     def __init__(self, cell: {}):
         self.__layouts = []
-        for i in cell['layouts']:
+        for i in cell.get('layouts', []):
             self.__layouts.append(LayoutModel(i))
-        self.__xsc = cell['xsc']
-        self.__xec = cell['xec']
-        self.__ysc = cell['ysc']
-        self.__yec = cell['yec']
-        self.__type = cell['type']
-        self.__alignment = cell['alignment']
-        self.__cell_id = cell['cellId']
-        self.__page_num = cell['pageNum']
-        self.__pos = cell['pos']
+        self.__xsc = cell.get('xsc', 0)
+        self.__xec = cell.get('xec', 0)
+        self.__ysc = cell.get('ysc', 0)
+        self.__yec = cell.get('yec', 0)
+        self.__type = cell.get('type', '')
+        self.__alignment = cell.get('alignment', 'left')
+        self.__cell_id = cell.get('cellId', 0)
+        self.__page_num = cell.get('pageNum', [])
+        self.__pos = cell.get('pos', [])
 
     def get_xsc(self) -> int:
         return self.__xsc

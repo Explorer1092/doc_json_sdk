@@ -26,10 +26,10 @@ class TableLayoutModel(LayoutModel):
     def __init__(self, table_layout_model: {}):
         super().__init__(table_layout_model)
 
-        self.num_col = table_layout_model['numCol']
-        self.num_row = table_layout_model['numRow']
+        self.num_col = table_layout_model.get('numCol', 0)
+        self.num_row = table_layout_model.get('numRow', 0)
         self.cells = []
-        for i in table_layout_model['cells']:
+        for i in table_layout_model.get('cells', []):
             self.cells.append(Cell(i))
 
     def set_kv(self, kv: []):
