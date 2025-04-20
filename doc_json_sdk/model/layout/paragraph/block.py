@@ -29,7 +29,7 @@ class Block:
             for i in block['pos']:
                 self.__pos.append(PosModel(i))
         self.__text = block['text']
-        self.__style_id = block['styleId']
+        self.__style_id = block.get('styleId', 0)  # 使用get方法，提供默认值0
         self.__style = None
         self.__word_info = None
 

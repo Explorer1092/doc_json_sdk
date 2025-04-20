@@ -12,6 +12,7 @@ class DocumentHandler(ABC):
             - formula_enhancement
             - structure_type
             - reveal_markdown
+            - llm_enhancement
         :return:
         """
         pass
