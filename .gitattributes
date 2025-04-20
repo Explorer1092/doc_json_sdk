@@ -1,4 +1,4 @@
-doc_json_sdk/fonts/PingFang.ttc filter=lfs diff=lfs merge=lfs -text
+# doc_json_sdk/fonts/PingFang.ttc 不再使用 Git LFS，确保 PyPI 包内容正确
 *.ttf filter=lfs diff=lfs merge=lfs -text
 *.otf filter=lfs diff=lfs merge=lfs -text
 *.woff filter=lfs diff=lfs merge=lfs -text
